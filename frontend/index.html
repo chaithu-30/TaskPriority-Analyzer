@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Task Analyzer</h1>
+        <p>Prioritize your tasks</p>
+    </div>
+
+    <div class="main">
+        <div class="left-panel">
+            <h2>Enter Tasks</h2>
+            
+            <label>Strategy:</label>
+            <select id="strategySelect">
+                <option value="smart_balance">Smart Balance</option>
+                <option value="fastest_wins">Fastest Wins</option>
+                <option value="high_impact">High Impact</option>
+                <option value="deadline_driven">Deadline Driven</option>
+            </select>
+
+            <textarea id="taskInput" rows="15"></textarea>
+
+            <div class="buttons">
+                <button onclick="analyzeTasks()">Analyze</button>
+                <button onclick="loadSampleData()">Load Sample</button>
+            </div>
+
+            <div id="loadingSpinner" class="loading hidden">
+                <span>Analyzing...</span>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h2>Results</h2>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('priority')">Task Priority</button>
+                <button class="tab-btn" onclick="switchTab('graph')">Graph</button>
+            </div>
+            <div id="priorityTab" class="tab-content active">
+                <div id="resultsContainer" class="empty">
+                    <p>Enter tasks and click Analyze to see results</p>
+                </div>
+            </div>
+            <div id="graphTab" class="tab-content">
+                <div id="graphContainer" class="graph-container">
+                    <p class="empty">Analyze tasks to view dependency graph</p>
+                </div>
+            </div>
+            <div id="errorDisplay" class="error hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

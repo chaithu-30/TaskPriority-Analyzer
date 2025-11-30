@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background: #4a90e2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.left-panel, .right-panel {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+}
+
+select:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 13px;
+    margin-bottom: 15px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+button:hover {
+    background: #357abd;
+}
+
+button:active {
+    background: #2d6aa0;
+}
+
+.loading {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    color: #4a90e2;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+.empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-size: 14px;
+}
+
+.error {
+    background: #fee;
+    color: #c00;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    border-left: 4px solid #c00;
+}
+
+.task-card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-left: 5px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.task-card.high {
+    border-left-color: #e74c3c;
+    background: #fff5f5;
+}
+
+.task-card.medium {
+    border-left-color: #f39c12;
+    background: #fffbf0;
+}
+
+.task-card.low {
+    border-left-color: #27ae60;
+    background: #f0fdf4;
+}
+
+.task-rank {
+    display: inline-block;
+    background: #4a90e2;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.task-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.task-score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 12px;
+}
+
+.task-details {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.task-details span {
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.explanation {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.5;
+    border-left: 3px solid #4a90e2;
+}
+
+.warning {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: #856404;
+    font-weight: 500;
+}
+
+.info {
+    background: #d1ecf1;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: #0c5460;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    color: #4a90e2;
+    background: #f5f5f5;
+}
+
+.tab-btn.active {
+    color: #4a90e2;
+    border-bottom-color: #4a90e2;
+    background: #f5f5f5;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.graph-container {
+    width: 100%;
+    min-height: 500px;
+    padding: 15px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+.graph-svg {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f5f7fa;
+    display: block;
+}
+
+.graph-node {
+    cursor: pointer;
+}
+
+.graph-node.normal {
+    fill: #4a90e2;
+    stroke: #357abd;
+    stroke-width: 2;
+}
+
+.graph-node.circular {
+    fill: #e74c3c;
+    stroke: #c0392b;
+    stroke-width: 3;
+}
+
+.graph-text {
+    font-size: 12px;
+    fill: #000000;
+    font-weight: 700;
+    pointer-events: none;
+    stroke: #ffffff;
+    stroke-width: 0.5px;
+    paint-order: stroke fill;
+}
+
+.graph-score {
+    font-size: 9px;
+    fill: #2c3e50;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.graph-edge {
+    stroke: #34495e;
+    stroke-width: 2;
+    fill: none;
+    opacity: 0.6;
+}
+
+.graph-edge.normal {
+    stroke: #34495e;
+}
+
+.graph-edge.circular {
+    stroke: #e74c3c;
+    stroke-width: 3;
+    stroke-dasharray: 5,5;
+    opacity: 1;
+}
+
+.graph-node:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    .graph-svg {
+        height: 400px;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        text-align: left;
+    }
+}
